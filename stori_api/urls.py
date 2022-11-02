@@ -31,7 +31,10 @@ from stori_api.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('', index, name='index_view'),
+    #apps urls
+    path('accounts/', include('accounts.urls')),
+
+    #path('', index, name='index_view'),
 ]
 
 admin.site.site_header = "Stori Administrator"
