@@ -20,6 +20,6 @@ class ProfileSerializer(serializers.ModelSerializer):
 		exclude = (
 			'created_at',
 			'password',
-			'isActive',
+			'is_active',
 			'modified_at',
 		)

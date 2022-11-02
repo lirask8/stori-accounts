@@ -43,6 +43,7 @@ INSTALLED_APPS = [
 
     'common',
     'accounts',
+    'transactions',
 ]
 
 MIDDLEWARE = [

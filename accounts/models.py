@@ -7,10 +7,10 @@ from common.models import BaseModel
 
 class User(BaseModel):
     name = models.CharField(max_length=100, null=False, blank=False)
-    lastName = models.CharField(max_length=100, null=False, blank=False)
+    last_name = models.CharField(max_length=100, null=False, blank=False)
     email = models.EmailField(max_length=100, null=False, blank=False)
     password = models.CharField(max_length=100, null=False, blank=False)
-    isActive = models.BooleanField(null=False, default=True)
+    is_active = models.BooleanField(null=False, default=True)
 
     def is_authenticated(self):
         return True
