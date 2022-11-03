@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "38150de5-a8b0-4d0e-abe7-1f1750499cde",
+		"name": "Stori Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "accounts",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\":\"Marco\",\n\t\"last_name\":\"Lopez\",\n\t\"email\":\"marcoa@gmail.com\",\n\t\"password\":\"Pass2030\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/accounts/signup/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"signup",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Signin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"marcoa@gmail.com\",\n\t\"password\":\"Pass2030\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/accounts/signin/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"signin",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI2MTQxOWJhMi0yN2M5LTRhYWMtYjNhMC04YzEzN2FlZTViMTAiLCJpYXQiOjE2Njc0NTk4NzIsImV4cCI6MTY5ODkwOTQ3Mn0.urpI66XIowaO71kNRa-HKc_SOJpnUl2dnTcsmYtPZfg"
+							}
+						],
+						"url": {
+							"raw": "localhost:8000/accounts/profile/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"accounts",
+								"profile",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "transactions",
+			"item": [
+				{
+					"name": "Process file",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "account_id",
+									"value": "a8148be6-726a-4eca-8422-f12f670110ff",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/olira/Documents/Code/python/account-balance-stori/transactions.csv"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8000/transactions/process-file/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"transactions",
+								"process-file",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

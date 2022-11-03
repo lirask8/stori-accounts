@@ -161,3 +161,10 @@ EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND', default='django.core.mail
 EMAIL_HOST = 'mailhog'
 EMAIL_PORT = 1025  # Work with MailHog
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', default='Support <support@gmail.com>')
+
+
+# FIXTURE CONFIGURATION
+# ------------------------------------------------------------------------------
+FIXTURE_DIRS = (
+    os.path.join(BASE_DIR, 'fixtures'),
+)
