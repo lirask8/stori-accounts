@@ -1,0 +1,1 @@
+[{"model": "transactions.account", "pk": "299facf8-e63e-4e0a-bfc2-536ec7f28d8a", "fields": {"created_at": "2022-11-03T07:32:58.987Z", "modified_at": "2022-11-03T07:32:58.988Z", "user": "5e0b715f-33de-4742-8fed-099cb30c06b3", "number": 324543, "is_active": true}}]

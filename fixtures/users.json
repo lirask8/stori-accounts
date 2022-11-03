@@ -1,0 +1,1 @@
+[{"model": "accounts.user", "pk": "5e0b715f-33de-4742-8fed-099cb30c06b3", "fields": {"created_at": "2022-11-03T07:32:15.837Z", "modified_at": "2022-11-03T07:32:15.838Z", "name": "Marco", "last_name": "Lopez", "email": "marcoa@gmail.com", "password": "pbkdf2_sha256$180000$ujoIt0ndiAhN$VokD0HGhgKHFtLLs72Re6T0UDmpH1fDLWA21MJQrb5o=", "is_active": true}}]
