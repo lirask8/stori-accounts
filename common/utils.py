@@ -1,6 +1,7 @@
 import base64
 import uuid
 
+from django.core.mail import EmailMessage
 from django.utils.translation import ugettext_lazy as _
 
 
@@ -29,3 +30,19 @@ class CommonMixin:
         fields = ', '.join(missingFields)
 
         return "%s %s" % (_("The following fields are required : "), fields)
+
+    @staticmethod
+    def send_email(subject, html_content, sender, to):
+        email = EmailMessage(
+            subject,
+            html_content,
+            sender,
+            to=to
+        )
+        email.content_subtype = 'html'
+
+        try:
+            email.send(fail_silently=False)
+            return True
+        except email.SMTPException:
+            return False

@@ -1,3 +1,4 @@
+from django.template.loader import render_to_string
 from django.utils.datastructures import MultiValueDictKeyError
 from django.db.models import Sum
 from rest_framework.views import APIView
@@ -42,6 +43,16 @@ class ProcessFileAPIView(APIView, CommonMixin):
             Transaction.objects.bulk_create(transactions)
             # Transaction.objects.filter(account=account, is_credit=False).aggregate(Sum("amount"))
             summary = file_processor.get_summary_data()
+            summary["account_id"] = account_id
+
+            html_mail = render_to_string('email/summary.html', summary)
+
+            sendmail = self.send_email(
+                subject="Transactions summary",
+                html_content=html_mail,
+                sender="no-reply@support.com",
+                to=["backoffice@mail.com"]
+            )
 
         except MultiValueDictKeyError:
             return Response(
