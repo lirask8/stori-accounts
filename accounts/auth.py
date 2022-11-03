@@ -12,7 +12,7 @@ from accounts.models import User
 
 def authenticate(email, password):
 
-	user = CommonMixin.getObjectOrNone(User, email=email)
+	user = CommonMixin.get_object_or_none(User, email=email)
 	if user and not check_password(password, user.password):
 		return None
 	return user

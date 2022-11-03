@@ -33,6 +33,7 @@ urlpatterns = [
 
     #apps urls
     path('accounts/', include('accounts.urls')),
+    path('transactions/', include('transactions.urls')),
 
     #path('', index, name='index_view'),
 ]

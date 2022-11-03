@@ -7,17 +7,16 @@ from django.utils.translation import ugettext_lazy as _
 class CommonMixin:
 
     @staticmethod
-    def getObjectOrNone(model=None, *args, **kwargs):
-
+    def get_object_or_none(model=None, *args, **kwargs):
         try:
             entity = model.objects.get(*args, **kwargs)
         except model.DoesNotExist:
-
             entity = None
 
         return entity
 
-    def returnSerializerErrors(self, dict={}):
+    @staticmethod
+    def return_serializer_errors(dict={}):
 
         missingFields = []
 
@@ -30,18 +29,3 @@ class CommonMixin:
         fields = ', '.join(missingFields)
 
         return "%s %s" % (_("The following fields are required : "), fields)
-
-
-def unique_id():
-    """Generate unique id"""
-    return base64.urlsafe_b64encode(uuid.uuid4(
-        ).bytes).decode('utf-8').replace('==', '')
-
-
-def get_object_or_none(model, *args, **kwargs):
-    """Get object or none"""
-    try:
-        obj = model.objects.get(*args, **kwargs)
-    except model.DoesNotExist:
-        obj = None
-    return obj

@@ -32,7 +32,7 @@ class SignupAPIView(APIView, CommonMixin):
             response_data["success"] = False
             return Response(data=response_data, status=status.HTTP_400_BAD_REQUEST)
 
-        user_exists = self.getObjectOrNone(User, email=data["email"])
+        user_exists = self.get_object_or_none(User, email=data["email"])
 
         if user_exists is not None:
             response_data["success"] = False
@@ -43,7 +43,7 @@ class SignupAPIView(APIView, CommonMixin):
 
         if not serializer.is_valid():
             response_data["success"] = False
-            response_data["message"] = self.returnSerializerErrors(serializer.errors)
+            response_data["message"] = self.return_serializer_errors(serializer.errors)
             return Response(data=response_data, status=status.HTTP_400_BAD_REQUEST)
 
         created_user = serializer.save()
