@@ -157,8 +157,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'storage')
 
 # EMAIL CONFIGURATION
 # ------------------------------------------------------------------------------
-#EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.smtp.EmailBackend')
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = os.environ.get('DJANGO_EMAIL_BACKEND', default='django.core.mail.backends.console.EmailBackend')
 EMAIL_HOST = 'mailhog'
 EMAIL_PORT = 1025  # Work with MailHog
 DEFAULT_FROM_EMAIL = os.environ.get('DEFAULT_FROM_EMAIL', default='Support <support@gmail.com>')

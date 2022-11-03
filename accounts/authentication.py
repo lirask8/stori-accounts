@@ -44,7 +44,7 @@ class TokenAuthentication(BaseAuthentication):
         except User.DoesNotExist:
             raise exceptions.AuthenticationFailed(_('User does not exist.'))
 
-        if not user.isActive:
+        if not user.is_active:
             raise exceptions.AuthenticationFailed(_('User inactive or deleted.'))
 
         return (user, key)

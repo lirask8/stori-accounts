@@ -3,7 +3,7 @@ Django==3.0.5
 #
 # M O D E L S
 #
-#psycopg2-binary==2.8.5  # https://github.com/psycopg/psycopg2
+psycopg2-binary==2.8.5  # https://github.com/psycopg/psycopg2
 
 #
 # R E S T   A P I S

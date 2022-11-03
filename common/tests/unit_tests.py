@@ -73,7 +73,7 @@ class APITestCase(TestUtilsMixin, BaseAPITestCase):
 
     def generate_user(self, is_active=True):
         user = UserFactory(name=self.TEST_USERNAME, email=self.TEST_EMAIL)
-        user.isActive = is_active
+        user.is_active = is_active
         user.save()
         return user
 

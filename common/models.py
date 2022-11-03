@@ -5,7 +5,6 @@ from django.db import models
 class BaseModel(models.Model):
     """Base model"""
 
-    id = models.CharField(primary_key=True, max_length=22, editable=False)
     id = models.CharField(
         primary_key=True, unique=True, default=uuid.uuid4, editable=False, max_length=36
     )
